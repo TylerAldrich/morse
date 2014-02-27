@@ -49,64 +49,39 @@ def string_to_morse(string):
 	""" Converts an input string to morse code. 
 	Ex: "SOS" becomes ['...', '---', '...'] """
 
+	char_to_morse = {
+		' ':' ',
+		'a':'.-',
+		'b':'-...',
+		'c':'-.-.',
+		'd':'-..',
+		'e':'.',
+		'f':'..-.',
+		'g':'--.',
+		'h':'....',
+		'i':'..',
+		'j':'.---',
+		'k':'-.-',
+		'l':'.-..',
+		'm':'--',
+		'n':'-.',
+		'o':'---',
+		'p':'.--.',
+		'q':'--.-',
+		'r':'.-.',
+		's':'...',
+		't':'-',
+		'u':'..-',
+		'v':'...-',
+		'w':'.--',
+		'x':'-..-',
+		'y':'-.--',
+		'z':'--..'
+	}
+
 	morse_list = []
 	for char in string:
-		if char == ' ':
-			morse_list.append(char)
-		elif char.lower() == 'a':
-			morse_list.append('.-')
-		elif char.lower() == 'b':
-			morse_list.append('-...')
-		elif char.lower() == 'c':
-			morse_list.append('-.-.')
-		elif char.lower() == 'd':
-			morse_list.append('-..')
-		elif char.lower() == 'e':
-			morse_list.append('.')
-		elif char.lower() == 'f':
-			morse_list.append('..-.')
-		elif char.lower() == 'g':
-			morse_list.append('--.')
-		elif char.lower() == 'h':
-			morse_list.append('....')
-		elif char.lower() == 'i':
-			morse_list.append('..')
-		elif char.lower() == 'j':
-			morse_list.append('.---')
-		elif char.lower() == 'k':
-			morse_list.append('-.-')
-		elif char.lower() == 'l':
-			morse_list.append('.-..')
-		elif char.lower() == 'm':
-			morse_list.append('--')
-		elif char.lower() == 'n':
-			morse_list.append('-.')
-		elif char.lower() == 'o':
-			morse_list.append('---')
-		elif char.lower() == 'p':
-			morse_list.append('.--.')
-		elif char.lower() == 'q':
-			morse_list.append('--.-')
-		elif char.lower() == 'r':
-			morse_list.append('.-.')
-		elif char.lower() == 's':
-			morse_list.append('...')
-		elif char.lower() == 't':
-			morse_list.append('-')
-		elif char.lower() == 'u':
-			morse_list.append('..-')
-		elif char.lower() == 'v':
-			morse_list.append('...-')
-		elif char.lower() == 'w':
-			morse_list.append('.--')
-		elif char.lower() == 'x':
-			morse_list.append('-..-')
-		elif char.lower() == 'y':
-			morse_list.append('-.--')
-		elif char.lower() == 'z':
-			morse_list.append('--..')
-		else:
-			morse_list.append(' ')
+		morse_list.append(char_to_morse[char.lower()])
 
 	return morse_list
 
@@ -116,6 +91,6 @@ def main(string):
 
 if __name__ == '__main__':
 	string = "SOS         SOS"
-	#main(string)
-	string = "Hello my name is Tyler nice to meet you"
+	#string = "Hello my name is Tyler nice to meet you"
 	main(string)
+	
